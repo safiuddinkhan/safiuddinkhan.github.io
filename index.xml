@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Page on Safi&#39;s Blog</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Home Page on Safi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Mar 2022 17:48:07 +0500</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make Raspberry Pi OS Bullseye more useful</title>
+      <link>http://example.org/posts/how_to_make_raspberry_pi_os_more_useful/</link>
+      <pubDate>Tue, 22 Mar 2022 17:48:07 +0500</pubDate>
+      
+      <guid>http://example.org/posts/how_to_make_raspberry_pi_os_more_useful/</guid>
+      <description>Raspberry Pi OS is great for beginners but after a while you will start to realize that its desktop environment which is a modification of LXDE environment is rather limited to be used as a desktop. To make Raspberry Pi OS into the more standard Debian distro on which it is based on follow the following steps.
+ Either select &amp;ldquo;Raspberry Pi OS Lite (64-bit)&amp;quot; or &amp;ldquo;Raspberry Pi OS Lite (32-bit)&amp;quot; and write it on your SD Card or USB Drive.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description>Hello my name is Safi ud Din Khan. I am from Lahore, Pakistan. I am mainly an Electrical Engineer by education but also a developer and have wide variety of other interests including history. I am also an advocate of free and open source software and a committed Linux user since 2013 but will also tolerate proprietary software if necessary. Though I am using Linux as my main OS since 2013 but I have been exposed to Linux, BSDs and some flavors of Unix since childhood and teenage years back in the late 90s and early 2000s though It was mainly as a curiosity back then and I did not knew much and did not take Linux seriously until 2013.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://example.org/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/contact/</guid>
+      <description>Feel Free to contact me both via my email address and via my social media accounts.
+My email address is safiuddinkhan@gmail.com
+Social Media Accounts  My LinkedIn Account is https://www.linkedin.com/in/safi-ud-din-khan-b752ab13a/  </description>
+    </item>
+    
+  </channel>
+</rss>

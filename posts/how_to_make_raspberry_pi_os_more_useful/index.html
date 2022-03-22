@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>How to make Raspberry Pi OS Bullseye more useful</title>
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-dark text-light" style="$body-bg: #000;">
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+<div class="container-fluid">
+<a class="navbar-brand" href="http://example.org/">
+<img src="/logo.png" height="32px" width="32px" class="d-inline-block align-text-top">&nbsp;Safi&#39;s Blog
+</a>
+
+
+
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+	<span class="navbar-toggler-icon"></span>
+</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav">
+
+<li class="nav-item">
+	<a class="nav-link" href="/posts/">All Posts</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/about/">About</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/contact/">Contact</a>
+</li>
+
+</ul>
+</div>
+
+</div>  
+</nav>
+
+
+<div class="container pt-5">
+<br>
+<h1>How to make Raspberry Pi OS Bullseye more useful</h1>
+<span class="badge bg-info">2022-03-22 17:48:07 &#43;0500 PKT</span>
+
+	<a href="http://example.org/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
+
+	<a href="http://example.org/tags/linux/"><span class="badge bg-secondary">Linux</span></a>
+
+	<a href="http://example.org/tags/raspberry-pi/"><span class="badge bg-secondary">Raspberry Pi</span></a>
+
+<br><br>
+<p>Raspberry Pi OS is great for beginners but after a while you will start to realize that its desktop environment which is a modification of LXDE environment is rather limited to be used as a desktop. To make Raspberry Pi OS into the more standard Debian distro on which it is based on follow the following steps.</p>
+<ol>
+<li>Either select <strong>&ldquo;Raspberry Pi OS Lite (64-bit)&quot;</strong> or <strong>&ldquo;Raspberry Pi OS Lite (32-bit)&quot;</strong> and write it on your SD Card or USB Drive. If you are using Raspberry Pi 4 or 400 then I will prefer you to install the 64-bit version.</li>
+</ol>
+<p><img src="/pi_imager.jpg" alt="Raspberry Pi Imager" title="Raspberry Pi Imager"></p>
+<ol start="2">
+<li>
+<p>After writing the SD Card or USB Drive boot your Raspberry Pi with it and login with <strong>&ldquo;pi&rdquo;</strong> and give the password <strong>&ldquo;raspberry&rdquo;</strong> then change the password with the command <strong>&ldquo;passwd&rdquo;</strong> to whatever you like.</p>
+</li>
+<li>
+<p>Then type <strong>&ldquo;sudo raspi-config&rdquo;</strong> and set your localizations and connect to your wifi network if required.</p>
+</li>
+<li>
+<p>Then type <strong>&ldquo;sudo apt update &amp;&amp; sudo upgrade&rdquo;</strong> to update the system.</p>
+</li>
+<li>
+<p>Now if you want to install like XFCE desktop environment then type <strong>&ldquo;sudo apt install task-xfce-desktop&rdquo;</strong> similarly you can install Gnome and KDE with <strong>&ldquo;sudo apt install task-gnome-deskop&rdquo;</strong> and <strong>&ldquo;sudo apt install task-kde-desktop&rdquo;</strong> respectively. The meta package will take care of mostly everything.</p>
+</li>
+<li>
+<p>It will take some time to install the desktop environment and all its dependencies. Onces it is done then type <strong>&ldquo;sudo apt purge openresolv dhcpcd5&rdquo;</strong> to remove openresolv and dhcpcd5 otherwise you will not be able to connect to your wifi or ethernet connection via network manager and you have to rely on raspi-config utility. Once both programs are removed then reboot.</p>
+</li>
+</ol>
+<figure><a href="/screenshot_xfce_pi.jpg">
+    <img src="/screenshot_xfce_pi.jpg"
+         alt="Standard XFCE Desktop on Raspberry Pi" width="640px"/> </a>
+</figure>
+
+<p>Feel free to fine tune it like in the screenshot above and change the theme and the wallpaper as you wish. Type <strong>&ldquo;sudo apt install neofech&rdquo;</strong> to install neofetch and type <strong>&ldquo;neofetch&rdquo;</strong> in the terminal to get the distro information like in the screenshot.</p>
+<ol start="7">
+<li>To make Raspberry Pi OS do autologin on your console type <strong>&ldquo;sudo nano /etc/lightdm/lightdm.conf&rdquo;</strong> and under <strong>&quot;[Seat:*]&quot;</strong> section locate the lines <strong>&quot;# autologin-user=&quot;</strong> and <strong>&quot;#autologin-user-timeout=0&rdquo;</strong> comment both and add the user <strong>&ldquo;pi&rdquo;</strong> after <strong>&ldquo;autologin-user=&quot;</strong> as following.</li>
+</ol>
+<figure><a href="/screenshot_autologin.jpg">
+    <img src="/screenshot_autologin.jpg"
+         alt="Standard XFCE Desktop on Raspberry Pi" width="640px"/> </a>
+</figure>
+
+<p>Save the file and reboot the system and now your system will automatically login to the <strong>&ldquo;pi&rdquo;</strong> user.</p>
+<ol start="8">
+<li>If you are annoyed by user authentication whenever your computer comes from sleep in XFCE desktop go settings and then power management and disable the <strong>&ldquo;Lock screen when system is going to sleep&rdquo;</strong> in the Security tab.</li>
+</ol>
+<figure><a href="/screenshot_xfce_screensaver.jpg">
+    <img src="/screenshot_xfce_screensaver.jpg"
+         alt="Power Settings of XFCE Desktop" width="640px"/> </a>
+</figure>
+
+<ol start="9">
+<li>
+<p>Now if you are running the Raspberry Pi OS 64-bit version then in the terminal window type <strong>&ldquo;sudo apt install flatpak&rdquo;</strong> and once it is done type <strong>&ldquo;flatpak remote-add &ndash;if-not-exists flathub <a href="https://flathub.org/repo/flathub.flatpakrepo%22">https://flathub.org/repo/flathub.flatpakrepo&quot;</a></strong> to install flatpak on your computer. Once everything is done reboot if necessary. Of course not everything will work but it would still be useful to install many missing packages from the main repo.</p>
+</li>
+<li>
+<p>With <strong>&ldquo;task-*-deskop&rdquo;&quot;</strong> package by default Raspberry Pi OS will install the Firefox ESR version by default. To install the Raspberry Pi OS modded Chromium on your terminal windows type &ldquo;sudo apt install rpi-chromium-mods&rdquo;.</p>
+</li>
+</ol>
+<figure><a href="/screenshot_chromium_pi.jpg">
+    <img src="/screenshot_chromium_pi.jpg"
+         alt="How to install Raspberry Pi OS modded Chromium" width="640px"/> </a>
+</figure>
+
+<ol start="11">
+<li>To install the other missing default Raspberry Pi OS packages you can always go to synaptic and search for <strong>&ldquo;raspberry&rdquo;</strong> and install whatever you need. Though beware do not install <strong>&ldquo;raspberrypi-net-mods&rdquo;</strong> at any cost otherwise it will mess up with the Network Manager and you will have to use the raspi-config utility to connect to the internet.</li>
+</ol>
+<figure><a href="/screenshot_synaptic_pi.jpg">
+    <img src="/screenshot_synaptic_pi.jpg"
+         alt="Synaptic Package Manager" width="640px"/> </a>
+</figure>
+
+<p>I hope I have made everything easy. If you like my tutorial feel free to share it.</p>
+
+</div>
+
+<footer class="mt-auto" id="footer1">
+<nav class="navbar navbar-expand-sm bg-secondary">
+<div class="container-fluid">
+<p class="text-white w-100 text-center">Copyright© Safi ud Din Khan 2022</p>
+</div>  
+</nav>
+</footer>
+
+</body>
+</html>
