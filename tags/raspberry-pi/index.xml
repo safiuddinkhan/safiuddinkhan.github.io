@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry Pi on Safi&#39;s Blog</title>
-    <link>http://example.org/tags/raspberry-pi/</link>
+    <link>/tags/raspberry-pi/</link>
     <description>Recent content in Raspberry Pi on Safi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Mar 2022 17:48:07 +0500</lastBuildDate><atom:link href="http://example.org/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Mar 2022 17:48:07 +0500</lastBuildDate><atom:link href="/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to make Raspberry Pi OS Bullseye more useful</title>
-      <link>http://example.org/posts/how_to_make_raspberry_pi_os_more_useful/</link>
+      <link>/posts/how_to_make_raspberry_pi_os_more_useful/</link>
       <pubDate>Tue, 22 Mar 2022 17:48:07 +0500</pubDate>
       
-      <guid>http://example.org/posts/how_to_make_raspberry_pi_os_more_useful/</guid>
+      <guid>/posts/how_to_make_raspberry_pi_os_more_useful/</guid>
       <description>Raspberry Pi OS is great for beginners but after a while you will start to realize that its desktop environment which is a modification of LXDE environment is rather limited to be used as a desktop. To make Raspberry Pi OS into the more standard Debian distro on which it is based on follow the following steps.
  Either select &amp;ldquo;Raspberry Pi OS Lite (64-bit)&amp;quot; or &amp;ldquo;Raspberry Pi OS Lite (32-bit)&amp;quot; and write it on your SD Card or USB Drive.</description>
     </item>
