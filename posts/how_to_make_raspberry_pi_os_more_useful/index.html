@@ -94,7 +94,10 @@ if (!doNotTrack) {
 <ol>
 <li>Either select <strong>&ldquo;Raspberry Pi OS Lite (64-bit)&quot;</strong> or <strong>&ldquo;Raspberry Pi OS Lite (32-bit)&quot;</strong> and write it on your SD Card or USB Drive. If you are using Raspberry Pi 4 or 400 then I will prefer you to install the 64-bit version.</li>
 </ol>
-<p><img src="/pi_imager.jpg" alt="Raspberry Pi Imager" title="Raspberry Pi Imager"></p>
+
+<a href='/pi_imager.jpg'><img src='/pi_imager.jpg' alt='Raspberry Pi Imager' width='' height='' class="img-fluid"></a>
+
+
 <ol start="2">
 <li>
 <p>After writing the SD Card or USB Drive boot your Raspberry Pi with it and login with <strong>&ldquo;pi&rdquo;</strong> and give the password <strong>&ldquo;raspberry&rdquo;</strong> then change the password with the command <strong>&ldquo;passwd&rdquo;</strong> to whatever you like.</p>
@@ -112,30 +115,32 @@ if (!doNotTrack) {
 <p>It will take some time to install the desktop environment and all its dependencies. Onces it is done then type <strong>&ldquo;sudo apt purge openresolv dhcpcd5&rdquo;</strong> to remove openresolv and dhcpcd5 otherwise you will not be able to connect to your wifi or ethernet connection via network manager and you have to rely on raspi-config utility. Once both programs are removed then reboot.</p>
 </li>
 </ol>
-<figure><a href="/screenshot_xfce_pi.jpg">
-    <img src="/screenshot_xfce_pi.jpg"
-         alt="Standard XFCE Desktop on Raspberry Pi" width="640px"/> </a>
-</figure>
+
+<a href='/screenshot_xfce_pi.jpg'><img src='/screenshot_xfce_pi.jpg' alt='Standard XFCE Desktop on Raspberry Pi' width='640px' height='' class="img-fluid"></a>
+
 
 <p>Feel free to fine tune it like in the screenshot above and change the theme and the wallpaper as you wish. Type <strong>&ldquo;sudo apt install neofech&rdquo;</strong> to install neofetch and type <strong>&ldquo;neofetch&rdquo;</strong> in the terminal to get the distro information like in the screenshot.</p>
 <ol start="7">
-<li>To make Raspberry Pi OS do autologin on your console type <strong>&ldquo;sudo nano /etc/lightdm/lightdm.conf&rdquo;</strong> and under <strong>&quot;[Seat:*]&quot;</strong> section locate the lines <strong>&quot;# autologin-user=&quot;</strong> and <strong>&quot;#autologin-user-timeout=0&rdquo;</strong> comment both and add the user <strong>&ldquo;pi&rdquo;</strong> after <strong>&ldquo;autologin-user=&quot;</strong> as following.</li>
+<li>
+<p>To install the graphical bluetooth manager open your terminal and type <strong>&ldquo;sudo apt install blueman&rdquo;</strong> and then reboot your computer and you will see the blutooth manager icon on your panel.</p>
+</li>
+<li>
+<p>To make Raspberry Pi OS do autologin on your console type <strong>&ldquo;sudo nano /etc/lightdm/lightdm.conf&rdquo;</strong> and under <strong>&quot;[Seat:*]&quot;</strong> section locate the lines <strong>&quot;# autologin-user=&quot;</strong> and <strong>&quot;#autologin-user-timeout=0&rdquo;</strong> comment both and add the user <strong>&ldquo;pi&rdquo;</strong> after <strong>&ldquo;autologin-user=&quot;</strong> as following.</p>
+</li>
 </ol>
-<figure><a href="/screenshot_autologin.jpg">
-    <img src="/screenshot_autologin.jpg"
-         alt="Standard XFCE Desktop on Raspberry Pi" width="640px"/> </a>
-</figure>
+
+<a href='/screenshot_autologin.jpg'><img src='/screenshot_autologin.jpg' alt='Standard XFCE Desktop on Raspberry Pi' width='640px' height='' class="img-fluid"></a>
+
 
 <p>Save the file and reboot the system and now your system will automatically login to the <strong>&ldquo;pi&rdquo;</strong> user.</p>
-<ol start="8">
+<ol start="9">
 <li>If you are annoyed by user authentication whenever your computer comes from sleep in XFCE desktop go settings and then power management and disable the <strong>&ldquo;Lock screen when system is going to sleep&rdquo;</strong> in the Security tab.</li>
 </ol>
-<figure><a href="/screenshot_xfce_screensaver.jpg">
-    <img src="/screenshot_xfce_screensaver.jpg"
-         alt="Power Settings of XFCE Desktop" width="640px"/> </a>
-</figure>
 
-<ol start="9">
+<a href='/screenshot_xfce_screensaver.jpg'><img src='/screenshot_xfce_screensaver.jpg' alt='Power Settings of XFCE Desktop' width='640px' height='' class="img-fluid"></a>
+
+
+<ol start="10">
 <li>
 <p>Now if you are running the Raspberry Pi OS 64-bit version then in the terminal window type <strong>&ldquo;sudo apt install flatpak&rdquo;</strong> and once it is done type <strong>&ldquo;flatpak remote-add &ndash;if-not-exists flathub <a href="https://flathub.org/repo/flathub.flatpakrepo%22">https://flathub.org/repo/flathub.flatpakrepo&quot;</a></strong> to install flatpak on your computer. Once everything is done reboot if necessary. Of course not everything will work but it would still be useful to install many missing packages from the main repo.</p>
 </li>
@@ -143,18 +148,16 @@ if (!doNotTrack) {
 <p>With <strong>&ldquo;task-*-deskop&rdquo;&quot;</strong> package by default Raspberry Pi OS will install the Firefox ESR version by default. To install the Raspberry Pi OS modded Chromium on your terminal windows type &ldquo;sudo apt install rpi-chromium-mods&rdquo;.</p>
 </li>
 </ol>
-<figure><a href="/screenshot_chromium_pi.jpg">
-    <img src="/screenshot_chromium_pi.jpg"
-         alt="How to install Raspberry Pi OS modded Chromium" width="640px"/> </a>
-</figure>
 
-<ol start="11">
+<a href='/screenshot_chromium_pi.jpg'><img src='/screenshot_chromium_pi.jpg' alt='How to install Raspberry Pi OS modded Chromium' width='640px' height='' class="img-fluid"></a>
+
+
+<ol start="12">
 <li>To install the other missing default Raspberry Pi OS packages you can always go to synaptic and search for <strong>&ldquo;raspberry&rdquo;</strong> and install whatever you need. Though beware do not install <strong>&ldquo;raspberrypi-net-mods&rdquo;</strong> at any cost otherwise it will mess up with the Network Manager and you will have to use the raspi-config utility to connect to the internet.</li>
 </ol>
-<figure><a href="/screenshot_synaptic_pi.jpg">
-    <img src="/screenshot_synaptic_pi.jpg"
-         alt="Synaptic Package Manager" width="640px"/> </a>
-</figure>
+
+<a href='/screenshot_synaptic_pi.jpg'><img src='/screenshot_synaptic_pi.jpg' alt='Synaptic Package Manager' width='640px' height='' class="img-fluid"></a>
+
 
 <p>I hope I have made everything easy. If you like my tutorial feel free to share it.</p>
 
