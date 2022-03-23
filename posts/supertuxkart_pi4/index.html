@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<title>How to run SuperTuxKart properly on your Pi4 with Raspberry Pi OS Bullseye (64-bit)</title>
+<title>How to run SuperTuxKart properly on your Pi4/400 with Raspberry Pi OS Bullseye (64-bit)</title>
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -69,7 +69,7 @@ if (!doNotTrack) {
 
 <div class="container pt-5">
 <br>
-<h1>How to run SuperTuxKart properly on your Pi4 with Raspberry Pi OS Bullseye (64-bit)</h1>
+<h1>How to run SuperTuxKart properly on your Pi4/400 with Raspberry Pi OS Bullseye (64-bit)</h1>
 <span class="badge bg-info">2022-03-23 12:08:06 &#43;0500 PKT</span>
 
 	<a href="https://safiuddinkhan.github.io/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
@@ -85,7 +85,7 @@ if (!doNotTrack) {
 <a href='/supertuxkart_pi_incorrect.jpg'><img src='/supertuxkart_pi_incorrect.jpg' alt='Missing karts and characters in SuperTuxKart' width='640px' height='' class="img-fluid"></a>
 
 
-<p>OK, so you install SuperTuxKart on your Pi4 from the repos and find out that it does not run properly and you see missing graphics like in the screenshot and you say to yourself what a piece of crap that it cannot even run SuperTuxKart properly. Well this is because most SBCs including Pi4 have the guts of mobile phone and they mainly support OpenGL ES properly and the implementation of OpenGL 3 is not complete.</p>
+<p>OK, so you install SuperTuxKart on your Pi4/400 from the repos and find out that it does not run properly and you see missing graphics like in the screenshot and you say to yourself what a piece of crap that it cannot even run SuperTuxKart properly. Well this is because most SBCs including Pi4 have the guts of mobile phone and they mainly support OpenGL ES properly and the implementation of OpenGL 3 is not complete.</p>
 <p>One way to fix this and make SuperTuxKart playable is force the game to use the legacy fallback drivers. In order to that follow the following steps.</p>
 <ol>
 <li>Open the terminal and use your faviorite editor whether its nano or vim and open the file <strong>&quot;/usr/share/games/supertuxkart/data/graphical_restrictions.xml&quot;</strong> via sudo and locate the following line at the bottom</li>
