@@ -13,7 +13,7 @@
       <pubDate>Wed, 23 Mar 2022 12:08:06 +0500</pubDate>
       
       <guid>https://safiuddinkhan.github.io/posts/supertuxkart_pi4/</guid>
-      <description>OK, so you install SuperTuxKart on your Pi4/400 from the repos and find out that it does not run properly and you see missing graphics like in the screenshot and you say to yourself what a piece of crap that it cannot even run SuperTuxKart properly. Well this is because most SBCs including Pi4 have the guts of mobile phone and they mainly support OpenGL ES properly and the implementation of OpenGL 3 is not complete.</description>
+      <description>How to run SuperTux Kart properly without the missing graphics on Raspberry Pi OS Bullseye (64-bit) running on Raspberry Pi 4 and Raspberry Pi 400.</description>
     </item>
     
   </channel>
