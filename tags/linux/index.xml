@@ -6,7 +6,16 @@
     <description>Recent content in Linux on Safi&#39;s Tech Journal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Mar 2022 12:08:06 +0500</lastBuildDate><atom:link href="https://safiuddinkhan.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 14:37:12 +0500</lastBuildDate><atom:link href="https://safiuddinkhan.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My current favorite FOSS(Free and Open Source Software) Game</title>
+      <link>https://safiuddinkhan.github.io/posts/scorched3d/</link>
+      <pubDate>Mon, 28 Mar 2022 14:37:12 +0500</pubDate>
+      
+      <guid>https://safiuddinkhan.github.io/posts/scorched3d/</guid>
+      <description>Scorched 3D is a turn-based 3D artillery game inspired by the old MS-DOS title of Scorched Earth. The game has existed for a long time but it is just as addictive as now as it used to be.</description>
+    </item>
+    
     <item>
       <title>How to run SuperTuxKart properly on your Pi4/400 with Raspberry Pi OS Bullseye (64-bit)</title>
       <link>https://safiuddinkhan.github.io/posts/supertuxkart_pi4/</link>
@@ -22,7 +31,7 @@
       <pubDate>Wed, 23 Mar 2022 09:08:47 +0500</pubDate>
       
       <guid>https://safiuddinkhan.github.io/posts/control_keyboard_mouse_ssh/</guid>
-      <description>How to control the keyboard and mouse of your linux machine remotely the most easiet way with X2X via SSH without the use of physical KVM switch or any proprietary software.</description>
+      <description>How to control the keyboard and mouse of your Linux machine remotely via the most easiest way with X2X via SSH without the use of a physical KVM switch or any proprietary software.</description>
     </item>
     
     <item>
@@ -31,7 +40,7 @@
       <pubDate>Tue, 22 Mar 2022 17:48:07 +0500</pubDate>
       
       <guid>https://safiuddinkhan.github.io/posts/how_to_make_raspberry_pi_os_more_useful/</guid>
-      <description>Raspberry Pi OS is great for beginners but it is rather limited as a desktop OS. I will here explain on how to turn it into a more standard linux distro.</description>
+      <description>Raspberry Pi OS is great for beginners but it is rather limited as a desktop OS. I will explain how to turn it into a more standard Linux distro.</description>
     </item>
     
   </channel>
