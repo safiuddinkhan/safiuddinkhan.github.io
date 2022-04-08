@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<title>How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever</title>
+<title>How to turn your older Raspberry Pi into a BitTorrent Home Media Sever</title>
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -16,17 +16,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
- <meta name="description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia) and stream the content on DNLA/UPnP supported device.">
+ <meta name="description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia).">
  
  <meta name="og:site_name" content="Tech with Safi">
- <meta name="og:title" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever">
- <meta property="og:description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia) and stream the content on DNLA/UPnP supported device." />
+ <meta name="og:title" content="How to turn your older Raspberry Pi into a BitTorrent Home Media Sever">
+ <meta property="og:description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia)." />
  <meta property="og:image" content="/pi1.jpg" />
  <meta property="og:type" content="article" />
  
  
- <meta name="twitter:title" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever">
- <meta name="twitter:description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia) and stream the content on DNLA/UPnP supported device.">
+ <meta name="twitter:title" content="How to turn your older Raspberry Pi into a BitTorrent Home Media Sever">
+ <meta name="twitter:description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia).">
  <meta name="twitter:image" content="/pi1.jpg">
  <meta name="twitter:card" content="summary_large_image">
  
@@ -84,7 +84,7 @@
 
 <div class="container pt-5">
 <br>
-<h1>How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever</h1>
+<h1>How to turn your older Raspberry Pi into a BitTorrent Home Media Sever</h1>
 <span class="badge bg-info">2022-04-06 20:58:51 &#43;0500 PKT</span>
 
 	<a href="https://safiuddinkhan.github.io/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
@@ -101,16 +101,16 @@
 
 
 <p>So, you have a Raspberry Pi 0/1 lying around, but you don&rsquo;t know what to do with it. Why not turn it into a Bittorrent Client Home Media Server. Of course, your Raspberry Pi 0/1 is not fast enough to support more full-featured media servers like <strong>PLEX</strong> or <strong>Jellyfin</strong>, but it can still become a media server with MiniDLNA(Now ReadyMedia).</p>
-<h1 id="what-is-dlnaupnp">What is DLNA/UPnP?</h1>
+<h2 id="what-is-dlnaupnp">What is DLNA/UPnP?</h2>
 
 <a href='/dlna.jpg'><img src='/dlna.jpg' alt='DLNA Logo' width='320px' height='' class="img-fluid pt-2 pb-2"></a>
 
 
 <p><strong>DLNA</strong> stands for <strong>Digital Living Network Alliance</strong> and was founded in 2003 to develop standard guidelines and protocols for sharing digital media between different multimedia devices like PCs, Mobile Phones, Tablets and TVs in a home environment.</p>
 <p>The main set of protocols that <strong>DLNA</strong> supports are called <strong>UPnP</strong>, which stands for <strong>Universal Plug and Play</strong>. <strong>UPnP</strong> provides discoverability, playlist and remote playability within a home network. <strong>UPnP</strong> is widely supported by network-attached storage devices.</p>
-<h1 id="what-are-the-dlnaupnp-supported-clients">What are the DLNA/UPnP supported clients?</h1>
+<h2 id="what-are-the-dlnaupnp-supported-clients">What are the DLNA/UPnP supported clients?</h2>
 <p><strong>DLNA/UPnP</strong> is supported by a wide range of devices, including your smart tv. In this article, we will use the VLC player which is available on both mobile and on the PC.</p>
-<h1 id="what-do-i-need-to-do">What do I need to do?</h1>
+<h2 id="what-do-i-need-to-do">What do I need to do?</h2>
 
 <a href='/dlna1.jpg'><img src='/dlna1.jpg' alt='Raspberry Pi Imager' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
 
@@ -192,9 +192,9 @@ WantedBy=multi-user.target</p>
 <li>Now go to <strong>Tools &gt; Options &gt; Downloads</strong> in your qBittorrent WebUI and set up the <strong>Default Save Path:</strong> to <strong>/home/&lt;userid&gt;/share/</strong> to point to our <strong>share</strong> folder. where <strong>&lt;userid&gt;</strong> is whatever your <strong>user</strong> is and usually by default its <strong>pi</strong> on the <strong>Raspberry Pi OS</strong>.</li>
 </ul>
 <p>That is all you need to do and you are done.</p>
-<h1 id="how-to-play-the-media-files-downloaded-by-the-qbittorrent-webui">How to play the media files downloaded by the qBittorrent WebUI?</h1>
+<h2 id="how-to-play-the-media-files-downloaded-by-the-qbittorrent-webui">How to play the media files downloaded by the qBittorrent WebUI?</h2>
 
-<a href='/dlna8.jpg'><img src='/dlna8.jpg' alt='qBittorrent WebUI Save Folder Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+<a href='/dlna8.jpg'><img src='/dlna8.jpg' alt='VLC Player DLNA/UPnP Playlist' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
 
 
 <p>Open your VLC media player then go to ** Views &gt; Playlist ** and then click on ** Universal Plug&rsquo;n&rsquo;Play ** on the side panel under the ** Local Network ** section and you will see your device there and all the downloaded media files.</p>
