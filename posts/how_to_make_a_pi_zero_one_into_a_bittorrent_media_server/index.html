@@ -120,7 +120,7 @@
 <p>The first step is to install the <strong>Raspberry Pi OS Lite (32-bit) Bullseye</strong> on your Raspberry Pi 0/1 and configure it properly and enable SSH. I will not go into details, but there are plenty of tutorials on the internet on how to do it.</p>
 </li>
 <li>
-<p>Login to your device via SSH and create a folder by the name of <strong>share</strong> in the home folder by typing <strong>mkdir /home/&lt;user&gt;/share</strong> where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
+<p>Login to your device via SSH and create a folder by the name of <strong>share</strong> in the home folder by typing <strong>mkdir /home/&lt;user&gt;/share</strong> where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</p>
 </li>
 <li>
 <p>Now type <strong>sudo apt install samba</strong> to install the samba server on your device.</p>
@@ -141,7 +141,7 @@ guest <span style="color:#e6db74">ok = yes  </span>
 create <span style="color:#e6db74">mask = 0644  </span>
 directory <span style="color:#e6db74">mask = 0755  </span>
 force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div>
-<p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
+<p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</p>
 <ul>
 <li>Now type <strong>sudo apt install qbittorrent-nox minidlna</strong> to install qbittorrent-nox and MiniDLNA(Now ReadyMedia) on your device.</li>
 </ul>
@@ -150,7 +150,7 @@ force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div
 
 
 <ul>
-<li>Now type <strong>sudo nano /etc/minidlna.conf</strong> to configure your MiniDLNA sever and add the following line <strong>media_dir=/home/&lt;user&gt;/share</strong> then save the file and restart your device. Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</li>
+<li>Now type <strong>sudo nano /etc/minidlna.conf</strong> to configure your MiniDLNA sever and add the following line <strong>media_dir=/home/&lt;user&gt;/share</strong> then save the file and restart your device. Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</li>
 </ul>
 
 <a href='/dlna4.jpg'><img src='/dlna4.jpg' alt='qBittorrent Client Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
@@ -171,7 +171,7 @@ force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div
 
 <span style="color:#960050;background-color:#1e0010">[Install]</span>  
 <span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target  </span></code></pre></div>
-<p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
+<p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</p>
 <ul>
 <li>Now type <strong>sudo systemctl daemon-reload</strong> and then <strong>sudo systemctl enable qbittorrent.service</strong> and then restart your device.</li>
 </ul>
