@@ -130,14 +130,14 @@
 <ul>
 <li>Now type <strong>sudo nano /etc/samba/smb.conf</strong> and add this at the end of it and save the file and next restart your device to make the <strong>share</strong> folder shareable on your windows-based devices.</li>
 </ul>
-<p>[share]<br>
-comment = &ldquo;shared folder&rdquo;<br>
-path = &ldquo;~/share&rdquo;<br>
-writeable = yes<br>
-guest ok = yes<br>
-create mask = 0644<br>
-directory mask = 0755<br>
-force user = &lt;user&gt;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Xorg" data-lang="Xorg"><span style="color:#960050;background-color:#1e0010">[share]</span>  
+comment <span style="color:#e6db74">= &#34;shared folder&#34;  </span>
+path <span style="color:#e6db74">= &#34;~/share&#34;  </span>
+writeable <span style="color:#e6db74">= yes  </span>
+guest <span style="color:#e6db74">ok = yes  </span>
+create <span style="color:#e6db74">mask = 0644  </span>
+directory <span style="color:#e6db74">mask = 0755  </span>
+force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div>
 <p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
 <ul>
 <li>Now install qbittorrent-nox and MiniDLNA(Now ReadyMedia) by typing <strong>sudo apt install qbittorrent-nox minidlna</strong>.</li>
@@ -156,16 +156,18 @@ force user = &lt;user&gt;</p>
 <ul>
 <li>Now type <strong>sudo nano /etc/systemd/system/qbittorrent.service</strong> and add the following into it and save the file.</li>
 </ul>
-<p>[Unit]<br>
-Description=&ldquo;qbittorent service&rdquo;<br>
-After=network.target</p>
-<p>[Service]<br>
-Type=forking<br>
-ExecStart=/usr/bin/qbittorrent-nox -d<br>
-User=&lt;user&gt;<br>
-Group=&lt;user&gt;</p>
-<p>[Install]<br>
-WantedBy=multi-user.target</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SYSTEMD" data-lang="SYSTEMD"><span style="color:#960050;background-color:#1e0010">[Unit]</span>  
+<span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qbittorent service&#34;  </span>
+<span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target  </span>
+  
+<span style="color:#960050;background-color:#1e0010">[Service]</span>  
+<span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">forking  </span>
+<span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/bin/qbittorrent-nox -d  </span>
+<span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">&lt;user&gt;  </span>
+<span style="color:#a6e22e">Group</span><span style="color:#f92672">=</span><span style="color:#e6db74">&lt;user&gt;</span>
+
+<span style="color:#960050;background-color:#1e0010">[Install]</span>  
+<span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target  </span></code></pre></div>
 <p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
 <ul>
 <li>Now type <strong>sudo systemctl daemon-reload</strong> and then <strong>sudo systemctl enable qbittorrent.service</strong> and then restart your device.</li>
