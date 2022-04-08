@@ -120,7 +120,7 @@
 <p>The first step is to install the <strong>Raspberry Pi OS Lite (32-bit) Bullseye</strong> on your Raspberry Pi 0/1 and configure it properly and enable SSH. I will not go into details, but there are plenty of tutorials on the internet on how to do it.</p>
 </li>
 <li>
-<p>Login to your device via SSH and create a folder by the name of <strong>share</strong> in the home folder by typing <strong>mkdir ~/share</strong> and then type <strong>sudo apt install samba</strong> to install the samba server onto your device.</p>
+<p>Login to your device via SSH and create a folder by the name of <strong>share</strong> in the home folder by typing <strong>mkdir /home/&lt;user&gt;/share</strong> and then type <strong>sudo apt install samba</strong> to install the samba server onto your device. Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
 </li>
 </ul>
 
@@ -191,7 +191,7 @@ force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div
 
 
 <ul>
-<li>Now go to <strong>Tools &gt; Options &gt; Downloads</strong> in your qBittorrent WebUI and set up the <strong>Default Save Path:</strong> to <strong>/home/&lt;userid&gt;/share/</strong> to point to our <strong>share</strong> folder. where <strong>&lt;userid&gt;</strong> is whatever your <strong>user</strong> is and usually by default its <strong>pi</strong> on the <strong>Raspberry Pi OS</strong>.</li>
+<li>Now go to <strong>Tools &gt; Options &gt; Downloads</strong> in your qBittorrent WebUI and set up the <strong>Default Save Path:</strong> to <strong>/home/&lt;userid&gt;/share/</strong> to point to our <strong>share</strong> folder. where <strong>&lt;userid&gt;</strong> is whatever your <strong>user</strong> is and usually by default its <strong>pi</strong> on the Raspberry Pi OS.</li>
 </ul>
 <p>That is all you need to do and you are done.</p>
 <h2 id="how-to-play-the-media-files-downloaded-by-the-qbittorrent-webui">How to play the media files downloaded by the qBittorrent WebUI?</h2>
