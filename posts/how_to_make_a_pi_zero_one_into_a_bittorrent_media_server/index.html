@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever</title>
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+ <meta name="description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia) and stream the content on DNLA/UPnP supported device.">
+ 
+ <meta name="og:site_name" content="Safi&#39;s Tech Blog">
+ <meta name="og:title" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever">
+ <meta property="og:description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia) and stream the content on DNLA/UPnP supported device." />
+ <meta property="og:image" content="/pi1.jpg" />
+ <meta property="og:type" content="article" />
+ 
+ 
+ <meta name="twitter:title" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever">
+ <meta name="twitter:description" content="How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia) and stream the content on DNLA/UPnP supported device.">
+ <meta name="twitter:image" content="/pi1.jpg">
+ <meta name="twitter:card" content="summary_large_image">
+ 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEFTZK4PP8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JEFTZK4PP8');
+</script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7136559760576112"
+     crossorigin="anonymous"></script>
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-dark text-light" style="$body-bg: #000;">
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+<div class="container-fluid">
+<a class="navbar-brand" href="https://safiuddinkhan.github.io/">
+<img src="/logo.png" height="32px" width="32px" class="d-inline-block align-text-top"></a>
+
+
+
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+	<span class="navbar-toggler-icon"></span>
+</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav">
+
+<li class="nav-item">
+	<a class="nav-link" href="/posts/">All Posts</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/about/">About</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/contact/">Contact</a>
+</li>
+
+</ul>
+</div>
+
+</div>  
+</nav>
+
+
+
+
+<div class="container pt-5">
+<br>
+<h1>How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Sever</h1>
+<span class="badge bg-info">2022-04-06 20:58:51 &#43;0500 PKT</span>
+
+	<a href="https://safiuddinkhan.github.io/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
+
+	<a href="https://safiuddinkhan.github.io/tags/linux/"><span class="badge bg-secondary">Linux</span></a>
+
+	<a href="https://safiuddinkhan.github.io/tags/raspberry-pi/"><span class="badge bg-secondary">Raspberry Pi</span></a>
+
+	<a href="https://safiuddinkhan.github.io/tags/media/"><span class="badge bg-secondary">Media</span></a>
+
+<br><br>
+
+<a href='/pi1.jpg'><img src='/pi1.jpg' alt='Raspberry Pi 1' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>So, you have a Raspberry Pi 0/1 lying around, but you don&rsquo;t know what to do with it. Why not turn it into a Bittorrent Client Home Media Server. Of course, your Raspberry Pi 0/1 is not fast enough to support more full-featured media servers like <strong>PLEX</strong> or <strong>Jellyfin</strong>, but it can still become a media server with MiniDLNA(Now ReadyMedia).</p>
+<h1 id="what-is-dlnaupnp">What is DLNA/UPnP?</h1>
+
+<a href='/dlna.jpg'><img src='/dlna.jpg' alt='DLNA Logo' width='320px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p><strong>DLNA</strong> stands for <strong>Digital Living Network Alliance</strong> and was founded in 2003 to develop standard guidelines and protocols for sharing digital media between different multimedia devices like PCs, Mobile Phones, Tablets and TVs in a home environment.</p>
+<p>The main set of protocols that <strong>DLNA</strong> supports are called <strong>UPnP</strong>, which stands for <strong>Universal Plug and Play</strong>. <strong>UPnP</strong> provides discoverability, playlist and remote playability within a home network. <strong>UPnP</strong> is widely supported by network-attached storage devices.</p>
+<h1 id="what-are-the-dlnaupnp-supported-clients">What are the DLNA/UPnP supported clients?</h1>
+<p><strong>DLNA/UPnP</strong> is supported by a wide range of devices, including your smart tv. In this article, we will use the VLC player which is available on both mobile and on the PC.</p>
+<h1 id="what-do-i-need-to-do">What do I need to do?</h1>
+
+<a href='/dlna1.jpg'><img src='/dlna1.jpg' alt='Raspberry Pi Imager' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>
+<p>The first step is to install the <strong>Raspberry Pi OS Lite (32-bit) Bullseye</strong> on your Raspberry Pi 0/1 and configure it properly and enable SSH. I will not go into details, but there are plenty of tutorials on the internet on how to do it.</p>
+</li>
+<li>
+<p>Login to your device via SSH and create a folder by the name of <strong>share</strong> in the home folder by typing <strong>mkdir ~/share</strong> and then type <strong>sudo apt install samba</strong> to install the samba server onto your device.</p>
+</li>
+</ul>
+
+<a href='/dlna2.jpg'><img src='/dlna2.jpg' alt='Raspberry Pi Imager' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>Now type <strong>sudo nano /etc/samba/smb.conf</strong> and add this at the end of it and save the file and next restart your device to make the <strong>share</strong> folder shareable on your windows-based devices.</li>
+</ul>
+<p>[share]<br>
+comment = &ldquo;shared folder&rdquo;<br>
+path = &ldquo;~/share&rdquo;<br>
+writeable = yes<br>
+guest ok = yes<br>
+create mask = 0644<br>
+directory mask = 0755<br>
+force user = &lt;user&gt;</p>
+<p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
+<ul>
+<li>Now install qbittorrent-nox and MiniDLNA(Now ReadyMedia) by typing <strong>sudo apt install qbittorrent-nox minidlna</strong>.</li>
+</ul>
+
+<a href='/dlna3.jpg'><img src='/dlna3.jpg' alt='MiniDLNA configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>Now type <strong>sudo nano /etc/minidlna.conf</strong> to configure your MiniDLNA sever and add the following line <strong>media_dir=~/share</strong> then save the file and restart your device.</li>
+</ul>
+
+<a href='/dlna4.jpg'><img src='/dlna4.jpg' alt='qBittorrent Client Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>Now type <strong>sudo nano /etc/systemd/system/qbittorrent.service</strong> and add the following into it and save the file.</li>
+</ul>
+<p>[Unit]<br>
+Description=&ldquo;qbittorent service&rdquo;<br>
+After=network.target</p>
+<p>[Service]<br>
+Type=forking<br>
+ExecStart=/usr/bin/qbittorrent-nox -d<br>
+User=&lt;user&gt;<br>
+Group=&lt;user&gt;</p>
+<p>[Install]<br>
+WantedBy=multi-user.target</p>
+<p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on the Raspberry Pi OS.</p>
+<ul>
+<li>Now type <strong>sudo systemctl daemon-reload</strong> and then <strong>sudo systemctl enable qbittorrent.service</strong> and then restart your device.</li>
+</ul>
+
+<a href='/dlna5.jpg'><img src='/dlna5.jpg' alt='qBittorrent WebUI' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>Now open your browser and type <strong>http://&lt;IP Address of your Raspberry Pi&gt;:8080</strong>. If the qBittorrent clien WebUI appears it means that your qBittorrent client is working.</li>
+</ul>
+
+<a href='/dlna6.jpg'><img src='/dlna6.jpg' alt='qBittorrent WebUI Authentication Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>Now go to <strong>Tools &gt; Options &gt; Web UI</strong> in your qBittorrent WebUI and set up whatever <strong>username</strong> and <strong>password</strong> you like for your qBittorrent WebUI.</li>
+</ul>
+
+<a href='/dlna7.jpg'><img src='/dlna7.jpg' alt='qBittorrent WebUI Save Folder Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li>Now go to <strong>Tools &gt; Options &gt; Downloads</strong> in your qBittorrent WebUI and set up the <strong>Default Save Path:</strong> to <strong>/home/&lt;userid&gt;/share/</strong> to point to our <strong>share</strong> folder. where <strong>&lt;userid&gt;</strong> is whatever your <strong>user</strong> is and usually by default its <strong>pi</strong> on the <strong>Raspberry Pi OS</strong>.</li>
+</ul>
+<p>That is all you need to do and you are done.</p>
+<h1 id="how-to-play-the-media-files-downloaded-by-the-qbittorrent-webui">How to play the media files downloaded by the qBittorrent WebUI?</h1>
+
+<a href='/dlna8.jpg'><img src='/dlna8.jpg' alt='qBittorrent WebUI Save Folder Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>Open your VLC media player then go to ** Views &gt; Playlist ** and then click on ** Universal Plug&rsquo;n&rsquo;Play ** on the side panel under the ** Local Network ** section and you will see your device there and all the downloaded media files.</p>
+
+</div>
+
+<footer class="mt-auto pt-5" id="footer1">
+<nav class="navbar navbar-expand-sm bg-secondary">
+<div class="container-fluid">
+<p class="text-white w-100 text-center">Copyright© Safi ud Din Khan 2022</p>
+</div>  
+</nav>
+</footer>
+
+</body>
+</html>
