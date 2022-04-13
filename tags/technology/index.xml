@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technology on Tech with Safi</title>
-    <link>https://safiuddinkhan.github.io/tags/technology/</link>
+    <link>https://techwithsafi.com/tags/technology/</link>
     <description>Recent content in Technology on Tech with Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Apr 2022 20:58:51 +0500</lastBuildDate><atom:link href="https://safiuddinkhan.github.io/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Apr 2022 20:58:51 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/technology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to turn your older Raspberry Pi into a BitTorrent Home Media Sever</title>
-      <link>https://safiuddinkhan.github.io/posts/how_to_make_a_pi_zero_one_into_a_bittorrent_media_server/</link>
+      <link>https://techwithsafi.com/posts/how_to_make_a_pi_zero_one_into_a_bittorrent_media_server/</link>
       <pubDate>Wed, 06 Apr 2022 20:58:51 +0500</pubDate>
       
-      <guid>https://safiuddinkhan.github.io/posts/how_to_make_a_pi_zero_one_into_a_bittorrent_media_server/</guid>
+      <guid>https://techwithsafi.com/posts/how_to_make_a_pi_zero_one_into_a_bittorrent_media_server/</guid>
       <description>How to turn your Raspberry Pi 0/1 into a BitTorrent Client Home Media Server with qBittorrent and MiniDLNA(Now ReadyMedia).</description>
     </item>
     
     <item>
       <title>One of my favorite FOSS game Scorched 3D</title>
-      <link>https://safiuddinkhan.github.io/posts/scorched3d/</link>
+      <link>https://techwithsafi.com/posts/scorched3d/</link>
       <pubDate>Mon, 28 Mar 2022 14:37:12 +0500</pubDate>
       
-      <guid>https://safiuddinkhan.github.io/posts/scorched3d/</guid>
+      <guid>https://techwithsafi.com/posts/scorched3d/</guid>
       <description>Scorched 3D is a turn-based 3D artillery game inspired by the old MS-DOS title of Scorched Earth. The game is an extremely addictive game.</description>
     </item>
     
     <item>
       <title>How to run SuperTuxKart properly on your Raspberry Pi OS Bullseye</title>
-      <link>https://safiuddinkhan.github.io/posts/supertuxkart_pi4/</link>
+      <link>https://techwithsafi.com/posts/supertuxkart_pi4/</link>
       <pubDate>Wed, 23 Mar 2022 12:08:06 +0500</pubDate>
       
-      <guid>https://safiuddinkhan.github.io/posts/supertuxkart_pi4/</guid>
+      <guid>https://techwithsafi.com/posts/supertuxkart_pi4/</guid>
       <description>How to run SuperTux Kart properly without the missing graphics on Raspberry Pi OS Bullseye (64-bit) running on Raspberry Pi 4 and Raspberry Pi 400.</description>
     </item>
     
     <item>
       <title>How to control the keyboard and mouse of your compute remotely via SSH</title>
-      <link>https://safiuddinkhan.github.io/posts/control_keyboard_mouse_ssh/</link>
+      <link>https://techwithsafi.com/posts/control_keyboard_mouse_ssh/</link>
       <pubDate>Wed, 23 Mar 2022 09:08:47 +0500</pubDate>
       
-      <guid>https://safiuddinkhan.github.io/posts/control_keyboard_mouse_ssh/</guid>
+      <guid>https://techwithsafi.com/posts/control_keyboard_mouse_ssh/</guid>
       <description>How to control the keyboard and mouse of your Linux machine remotely via x2x and SSH</description>
     </item>
     
     <item>
       <title>How to make Raspberry Pi OS Bullseye more useful</title>
-      <link>https://safiuddinkhan.github.io/posts/how_to_make_raspberry_pi_os_more_useful/</link>
+      <link>https://techwithsafi.com/posts/how_to_make_raspberry_pi_os_more_useful/</link>
       <pubDate>Tue, 22 Mar 2022 17:48:07 +0500</pubDate>
       
-      <guid>https://safiuddinkhan.github.io/posts/how_to_make_raspberry_pi_os_more_useful/</guid>
+      <guid>https://techwithsafi.com/posts/how_to_make_raspberry_pi_os_more_useful/</guid>
       <description>Raspberry Pi OS is great for beginners but it is rather limited as a desktop OS. I will explain how to turn it into a more standard Linux distro.</description>
     </item>
     
