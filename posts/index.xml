@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Tech with Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Apr 2022 20:58:51 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Apr 2022 08:12:11 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtualization in old x86 CPUs</title>
+      <link>https://techwithsafi.com/posts/virtualization_in_old_x86_cpus/</link>
+      <pubDate>Wed, 20 Apr 2022 08:12:11 +0500</pubDate>
+      
+      <guid>https://techwithsafi.com/posts/virtualization_in_old_x86_cpus/</guid>
+      <description>We all know that modern x86 CPUs can do hardware virtualization but do you know a form of virtualization has existed in all x86 CPUs since the 1980s?</description>
+    </item>
+    
     <item>
       <title>How to turn your older Raspberry Pi into a BitTorrent Home Media Sever</title>
       <link>https://techwithsafi.com/posts/how_to_make_a_pi_zero_one_into_a_bittorrent_media_server/</link>

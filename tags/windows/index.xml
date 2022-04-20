@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Tech with Safi</title>
+    <link>https://techwithsafi.com/tags/windows/</link>
+    <description>Recent content in Windows on Tech with Safi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Apr 2022 08:12:11 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtualization in old x86 CPUs</title>
+      <link>https://techwithsafi.com/posts/virtualization_in_old_x86_cpus/</link>
+      <pubDate>Wed, 20 Apr 2022 08:12:11 +0500</pubDate>
+      
+      <guid>https://techwithsafi.com/posts/virtualization_in_old_x86_cpus/</guid>
+      <description>We all know that modern x86 CPUs can do hardware virtualization but do you know a form of virtualization has existed in all x86 CPUs since the 1980s?</description>
+    </item>
+    
+  </channel>
+</rss>
