@@ -70,16 +70,5 @@
       <description>Hello, my name is Safi. My blog is about free and open-source software, Linux and other Unix-Like operating systems like the BSDs, single board computers like the Raspberry Pi and retro computing and retro gaming.</description>
     </item>
     
-    <item>
-      <title>Contact</title>
-      <link>https://techwithsafi.com/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://techwithsafi.com/contact/</guid>
-      <description>Feel Free to contact me both via my email address and via my social media accounts.
-My email address is safiuddinkhan@gmail.com
-Social Media Accounts  My LinkedIn Account is https://www.linkedin.com/in/safi-ud-din-khan-b752ab13a/  </description>
-    </item>
-    
   </channel>
 </rss>
