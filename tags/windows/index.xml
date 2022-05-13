@@ -6,7 +6,16 @@
     <description>Recent content in Windows on Technology with Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Apr 2022 08:12:11 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 18:02:36 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Install Wine on Raspberry Pi 64-bit Bullseye</title>
+      <link>https://techwithsafi.com/posts/how_to_install_wine_on_raspberry_pi/</link>
+      <pubDate>Fri, 13 May 2022 18:02:36 +0500</pubDate>
+      
+      <guid>https://techwithsafi.com/posts/how_to_install_wine_on_raspberry_pi/</guid>
+      <description>Installing Wine and running classic Windows games on Raspberry Pi 64-bit is a bit tricky but it can be done through my guide easily.</description>
+    </item>
+    
     <item>
       <title>Virtualization in old x86 CPUs</title>
       <link>https://techwithsafi.com/posts/virtualization_in_old_x86_cpus/</link>
