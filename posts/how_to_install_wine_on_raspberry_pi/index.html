@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>How to Install Wine on Raspberry Pi 64-bit Bullseye</title>
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+ <meta name="description" content="Installing Wine and running classic Windows games on Raspberry Pi 64-bit is a bit tricky but it can be done through my guide easily.">
+ 
+ <meta name="og:site_name" content="Technology with Safi">
+ <meta name="og:title" content="How to Install Wine on Raspberry Pi 64-bit Bullseye">
+ <meta property="og:description" content="Installing Wine and running classic Windows games on Raspberry Pi 64-bit is a bit tricky but it can be done through my guide easily." />
+ <meta property="og:image" content="/simcity3k.jpg" />
+ <meta property="og:type" content="article" />
+ 
+ 
+ <meta name="twitter:title" content="How to Install Wine on Raspberry Pi 64-bit Bullseye">
+ <meta name="twitter:description" content="Installing Wine and running classic Windows games on Raspberry Pi 64-bit is a bit tricky but it can be done through my guide easily.">
+ <meta name="twitter:image" content="/simcity3k.jpg">
+ <meta name="twitter:card" content="summary_large_image">
+ 
+
+ 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEFTZK4PP8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JEFTZK4PP8');
+</script>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7136559760576112"
+     crossorigin="anonymous"></script>
+
+
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-dark text-light" style="$body-bg: #000;">
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+<div class="container-fluid">
+<a class="navbar-brand" href="https://techwithsafi.com/">
+<img src="/logo.png" height="32px" width="32px" class="d-inline-block align-text-top" alt="Tech with Safi"></a>
+
+
+
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+	<span class="navbar-toggler-icon"></span>
+</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav">
+
+<li class="nav-item">
+	<a class="nav-link" href="/posts/">All Posts</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/about/">About</a>
+</li>
+
+</ul>
+</div>
+
+</div>  
+</nav>
+
+
+
+
+<div class="container pt-5">
+<br>
+<h1>How to Install Wine on Raspberry Pi 64-bit Bullseye</h1>
+<span class="badge bg-info">2022-05-13 18:02:36 &#43;0500 PKT</span>
+
+	<a href="https://techwithsafi.com/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
+
+	<a href="https://techwithsafi.com/tags/linux/"><span class="badge bg-secondary">Linux</span></a>
+
+	<a href="https://techwithsafi.com/tags/raspberry-pi/"><span class="badge bg-secondary">Raspberry Pi</span></a>
+
+<br><br>
+
+<a href='/simcity3k.jpg'><img src='/simcity3k.jpg' alt='Simcity 3000 running on Raspberry Pi4' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>Installing Wine on Raspberry Pi OS 64-bit Bullseye is quite tricky and the Wine from the Debian Repos will not work as you would have install X86 and x86_64 bit version of wine. I don&rsquo;t know how to install wine64 but I will tell you how to install wine32 on your Raspberry Pi OS.</p>
+<p>Before starting first follow my previous <a href="/posts/how_to_install_box86_and_box64/">post</a> and install Box86 and Box64 on your Raspberry Pi OS 64-bit Bullseye.</p>
+<p>Ones that is done now follow the following steps.</p>
+<ol>
+<li>Before anything install these packages by typing <strong>&ldquo;sudo apt install libasound2 libc6 libglib2.0-0 libgphoto2-6 libgphoto2-port12 libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 libldap-2.4-2 libopenal1 libpcap0.8 libpulse0 libsane1 libudev1 libunwind8 libusb-1.0-0 libvkd3d1 libx11-6 libxext6 ocl-icd-libopencl1 libasound2-plugins libncurses6 libtinfo5 libasound2:armhf libc6:armhf libglib2.0-0:armhf libgphoto2-6:armhf libgphoto2-port12:armhf libgstreamer-plugins-base1.0-0:armhf libgstreamer1.0-0:armhf libldap-2.4-2:armhf libopenal1:armhf libpcap0.8:armhf libpulse0:armhf libsane1:armhf libudev1:armhf libunwind8:armhf libusb-1.0-0:armhf libvkd3d1:armhf libx11-6:armhf libxext6:armhf ocl-icd-libopencl1:armhf libasound2-plugins:armhf libncurses6:armhf libmpeg2-4:armhf libmpeg2encpp-2.1-0:armhf libtinfo6:armhf libmpg123-0:armhf libtinfo5:armhf cabextract libxslt1.1:armhf zenity&rdquo;</strong> on your terminal. These are mostly missing libraries which would we required by Wine.</li>
+<li>Go to home folder by typing <strong>&ldquo;cd ~&quot;</strong> on your terminal.</li>
+<li>Download the Twister OS version of Wine by typing <strong>&ldquo;wget <a href="https://twisteros.com/wine.tgz">https://twisteros.com/wine.tgz</a> -O ~/wine.tgz&rdquo;</strong>. Its the most easiest way. The last time I checked the Twister OS Wine version was 5.13.</li>
+<li>Now uncompress the wine by typing <strong>&ldquo;tar -xzvf ~/wine.tgz&rdquo;</strong> on your terminal.</li>
+<li>Now enter the following commands:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot
+sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
+sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
+sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver</code></pre></div>
+<ol start="6">
+<li>Next step is to boot wine by typing <strong>&ldquo;wine wineboot&rdquo;</strong></li>
+<li>Now open file <strong>&quot;~/.bashrc&rdquo;</strong> in your terminal by typing <strong>&ldquo;nano .bashrc&rdquo;</strong> in your home folder and put this at the end of it <strong>&ldquo;export BOX86_NOBANNER=1&rdquo;</strong> and save the file and restart your terminal.</li>
+</ol>
+
+<a href='/wine1.jpg'><img src='/wine1.jpg' alt='Add export BOX86_NOBANNER=1 to .bashrc' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ol start="8">
+<li>Now download winetricks by typing <strong>&ldquo;wget <a href="https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks%22">https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks&quot;</a></strong> in your terminal.</li>
+<li>Move winetricks by typing <strong>&ldquo;sudo mv winetricks /usr/local/bin/&quot;</strong> in your terminal.</li>
+<li>Give execution permission to winetricks by typing <strong>&ldquo;sudo chmod +x /usr/local/bin/winetricks&rdquo;</strong> in your terminal.</li>
+</ol>
+
+<a href='/starwarsep1.jpg'><img src='/starwarsep1.jpg' alt='Star Wars Episode 1 Pod Racer running on Raspberry Pi4' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>Now at this point everything should run properly. Do rememember its a good idea to run everything in a 800x600 virtual desktop to save yourself from graphical glitches by typing &ldquo;winecfg&rdquo; in your terminal and put a tick mark on <strong>&ldquo;Emulate a virtual desktop&rdquo;</strong>.</p>
+
+<a href='/winecfg.jpg'><img src='/winecfg.jpg' alt='Create a virtual desktop with winecfg' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+
+</div>
+
+<footer class="mt-auto pt-5" id="footer1">
+<nav class="navbar navbar-expand-sm bg-secondary">
+<div class="container-fluid">
+<p class="text-white w-100 text-center">Copyright© Safi ud Din Khan 2022</p>
+</div>  
+</nav>
+</footer>
+
+</body>
+</html>

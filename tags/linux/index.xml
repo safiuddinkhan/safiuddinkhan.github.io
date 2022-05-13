@@ -6,7 +6,16 @@
     <description>Recent content in Linux on Technology with Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 May 2022 15:55:37 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 18:02:36 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Install Wine on Raspberry Pi 64-bit Bullseye</title>
+      <link>https://techwithsafi.com/posts/how_to_install_wine_on_raspberry_pi/</link>
+      <pubDate>Fri, 13 May 2022 18:02:36 +0500</pubDate>
+      
+      <guid>https://techwithsafi.com/posts/how_to_install_wine_on_raspberry_pi/</guid>
+      <description>Installing Wine and running classic Windows games on Raspberry Pi 64-bit is a bit tricky but it can be done through my guide easily.</description>
+    </item>
+    
     <item>
       <title>How to Install Box86 and Box64 on Raspberry Pi OS Bullseye 64-bit</title>
       <link>https://techwithsafi.com/posts/how_to_install_box86_and_box64/</link>
