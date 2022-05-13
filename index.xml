@@ -106,5 +106,14 @@
       <description>Hello, my name is Safi. My blog is about free and open-source software, Linux and other Unix-Like operating systems like the BSDs, single board computers like the Raspberry Pi and retro computing and retro gaming.</description>
     </item>
     
+    <item>
+      <title>My Patreons</title>
+      <link>https://techwithsafi.com/support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://techwithsafi.com/support/</guid>
+      <description>This page is dedicated to all my lovely and nice Patreons who are supporting my website and making everything possible.</description>
+    </item>
+    
   </channel>
 </rss>
