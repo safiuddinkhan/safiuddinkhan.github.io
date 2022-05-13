@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>How to Install Box86 and Box64 on Raspberry Pi OS Bullseye 64-bit</title>
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+ <meta name="description" content="Box86 and Box64 are great x86 and x86_64 compatibility layers for ARM-based SBCs including Rasperry Pi. I will tell you how to install them both at the same time on Raspberry Pi OS bullseye 64-bit.">
+ 
+ <meta name="og:site_name" content="Technology with Safi">
+ <meta name="og:title" content="How to Install Box86 and Box64 on Raspberry Pi OS Bullseye 64-bit">
+ <meta property="og:description" content="Box86 and Box64 are great x86 and x86_64 compatibility layers for ARM-based SBCs including Rasperry Pi. I will tell you how to install them both at the same time on Raspberry Pi OS bullseye 64-bit." />
+ <meta property="og:image" content="/box86.jpg" />
+ <meta property="og:type" content="article" />
+ 
+ 
+ <meta name="twitter:title" content="How to Install Box86 and Box64 on Raspberry Pi OS Bullseye 64-bit">
+ <meta name="twitter:description" content="Box86 and Box64 are great x86 and x86_64 compatibility layers for ARM-based SBCs including Rasperry Pi. I will tell you how to install them both at the same time on Raspberry Pi OS bullseye 64-bit.">
+ <meta name="twitter:image" content="/box86.jpg">
+ <meta name="twitter:card" content="summary_large_image">
+ 
+
+ 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEFTZK4PP8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JEFTZK4PP8');
+</script>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7136559760576112"
+     crossorigin="anonymous"></script>
+
+
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-dark text-light" style="$body-bg: #000;">
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+<div class="container-fluid">
+<a class="navbar-brand" href="https://techwithsafi.com/">
+<img src="/logo.png" height="32px" width="32px" class="d-inline-block align-text-top" alt="Tech with Safi"></a>
+
+
+
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+	<span class="navbar-toggler-icon"></span>
+</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav">
+
+<li class="nav-item">
+	<a class="nav-link" href="/posts/">All Posts</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/about/">About</a>
+</li>
+
+</ul>
+</div>
+
+</div>  
+</nav>
+
+
+
+
+<div class="container pt-5">
+<br>
+<h1>How to Install Box86 and Box64 on Raspberry Pi OS Bullseye 64-bit</h1>
+<span class="badge bg-info">2022-05-13 15:55:37 &#43;0500 PKT</span>
+
+	<a href="https://techwithsafi.com/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
+
+	<a href="https://techwithsafi.com/tags/linux/"><span class="badge bg-secondary">Linux</span></a>
+
+	<a href="https://techwithsafi.com/tags/raspberry-pi/"><span class="badge bg-secondary">Raspberry Pi</span></a>
+
+<br><br>
+
+<a href='/pi4.jpg'><img src='/pi4.jpg' alt='Raspberry Pi4' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>A Raspberry Pi4 is a great little single-board computer but since it&rsquo;s ARM-based, it cannot run x86 and x86_64 applications. To remedy this we have the <a href="https://github.com/ptitSeb/box86">Box86</a> and <a href="https://github.com/ptitSeb/box64">Box64</a> compatibility layers which translate x86 and x86_64 Linux binaries into ARM and AARCH64. Box86 and Box64 kind of work like Apple&rsquo;s Rosetta 2 and it does not completely emulate the x86 and x86_64 Linux binaries non-natively but would rather use native libraries where ever possible which gives it far greater performance than QEMU and makes many modern commercial games playable on Linux.</p>
+<p>Box86 and Box64 can be installed with <a href="https://github.com/Botspot/pi-apps">Pi-Apps</a> and <a href="https://github.com/jmcerrejon/PiKISS">PiKISS</a> on 32-bit versions of Raspberry Pi OS but they don&rsquo;t work on 64-bit Raspberry Pi OS Bullseye.</p>
+<h2 id="how-to-install-box64-on-raspberry-pi-os-64-bit-bullseye">How to Install Box64 on Raspberry Pi OS 64-bit Bullseye?</h2>
+
+<a href='/box64.png'><img src='/box64.png' alt='Box64 Logo' width='320px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ol>
+<li>First install these packages on your Raspberry Pi4 OS by typing <strong>&ldquo;sudo apt install build-essential mono-runtime git cmake&rdquo;</strong> on your terminal.</li>
+<li>Go to your homefolder by typing <strong>&ldquo;cd ~&quot;</strong> and then clone Box64 source code from github by typing <strong>&ldquo;git clone <a href="https://github.com/ptitSeb/box64%22">https://github.com/ptitSeb/box64&quot;</a></strong> on your terminal.</li>
+<li>Goto the Box64 folder by typing <strong>&ldquo;cd box64&rdquo;</strong> on your terminal.</li>
+<li>Type this on your terminal <strong>&ldquo;mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo&rdquo;</strong> and press enter.</li>
+<li>Compile Box64 by typing <strong>&ldquo;make -j2&rdquo;</strong> on your terminal.</li>
+<li>Once everything is done type this <strong>&ldquo;sudo make install&rdquo;</strong> and then this <strong>&ldquo;sudo systemctl restart systemd-binfmt&rdquo;</strong> on your terminal to install Box64.</li>
+</ol>
+<p>And Box64 is installed and now you will be able to run X86_64 binaries on your Raspberry Pi 4.</p>
+<h2 id="how-to-install-box86-on-raspberry-pi-os-64-bit-bullseye">How to Install Box86 on Raspberry Pi OS 64-bit Bullseye?</h2>
+
+<a href='/box86.png'><img src='/box86.png' alt='Box86 Logo' width='320px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>Installing Box86 on Raspberry Pi OS 64-bit Bullseye is bit tricky but it is not that difficult ones you figure out everything.</p>
+<ol>
+<li>First enable multiarch if it is not by typing <strong>&ldquo;sudo dpkg &ndash;add-architecture armhf&rdquo;</strong> on the terminal.</li>
+<li>Install these packages before compiling Box86 on 64-bit Raspberry Pi OS by typing <strong>&ldquo;sudo apt install gcc-arm-linux-gnueabihf&rdquo;</strong> on the terminal.</li>
+<li>Go to your homefolder by typing <strong>&ldquo;cd ~&quot;</strong> and then clone Box86 source code from github by typing <strong>&ldquo;git clone <a href="https://github.com/ptitSeb/box86%22">https://github.com/ptitSeb/box86&quot;</a></strong> on your terminal.</li>
+<li>Goto the Box86 folder by typing <strong>&ldquo;cd box86&rdquo;</strong> on your terminal.</li>
+<li>Type this on your terminal <strong>&ldquo;mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo&rdquo;</strong> and press enter.</li>
+<li>Compile Box86 by typing <strong>&ldquo;make -j2&rdquo;</strong> on your terminal.</li>
+<li>Once everything is done type this <strong>&ldquo;sudo make install&rdquo;</strong> and then this <strong>&ldquo;sudo systemctl restart systemd-binfmt&rdquo;</strong> on your terminal to install Box86.</li>
+</ol>
+<p>And Box86 is installed and now you will be able to run X86 binaries on your Raspberry Pi 4. Though most games wont run since 32-bit armhf libraries are missing so install these packages to ensure your games will run:</p>
+<p><strong>&ldquo;sudo apt install libegl-mesa0:armhf libgdm1:armhf libgl1-mesa-dri:armhf libglapi-mesa:armhf libgles2-mesa:armhf libglu1-mesa:armhf libglx-mesa0:armhf mesa-va-drivers:armhf mesa-vdpau-drivers:armhf mesa-vulkan-drivers:armhf libsdl1.2debian:armhf libsdl2-2.0-0:armhf libudev1:armhf&rdquo;</strong></p>
+<p>You can install any missing 32-bit libaries at anytime by <strong>&ldquo;sudo apt install &lt;package_name&gt;:armhf&rdquo;</strong> but do remember that do not install any other 32-bit packagers other than the missing 32-libraries otherwise the 64-bit alternate will be automatically uninstalled by apt.</p>
+
+</div>
+
+<footer class="mt-auto pt-5" id="footer1">
+<nav class="navbar navbar-expand-sm bg-secondary">
+<div class="container-fluid">
+<p class="text-white w-100 text-center">Copyright© Safi ud Din Khan 2022</p>
+</div>  
+</nav>
+</footer>
+
+</body>
+</html>

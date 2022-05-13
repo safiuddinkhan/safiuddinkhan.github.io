@@ -6,7 +6,16 @@
     <description>Recent content in Technology on Technology with Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Apr 2022 08:12:11 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 15:55:37 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Install Box86 and Box64 on Raspberry Pi OS Bullseye 64-bit</title>
+      <link>https://techwithsafi.com/posts/how_to_install_box86_and_box64/</link>
+      <pubDate>Fri, 13 May 2022 15:55:37 +0500</pubDate>
+      
+      <guid>https://techwithsafi.com/posts/how_to_install_box86_and_box64/</guid>
+      <description>Box86 and Box64 are great x86 and x86_64 compatibility layers for ARM-based SBCs including Rasperry Pi. I will tell you how to install them both at the same time on Raspberry Pi OS bullseye 64-bit.</description>
+    </item>
+    
     <item>
       <title>Virtualization in old x86 CPUs</title>
       <link>https://techwithsafi.com/posts/virtualization_in_old_x86_cpus/</link>
