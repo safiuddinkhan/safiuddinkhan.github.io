@@ -126,13 +126,9 @@
 <li>
 <p>Now type <strong>sudo apt install samba</strong> to install the samba server on your device.</p>
 </li>
-</ul>
-
-<a href='/dlna2.jpg'><img src='/dlna2.jpg' alt='Raspberry Pi Imager' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
-
-
-<ul>
-<li>Now type <strong>sudo nano /etc/samba/smb.conf</strong> and add this at the end of it and save the file and next restart your device to make the <strong>share</strong> folder shareable on your windows-based devices.</li>
+<li>
+<p>Now type <strong>sudo nano /etc/samba/smb.conf</strong> and add this at the end of it and save the file and next restart your device to make the <strong>share</strong> folder shareable on your windows-based devices.</p>
+</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Xorg" data-lang="Xorg"><span style="color:#960050;background-color:#1e0010">[share]</span>  
 comment <span style="color:#e6db74">= &#34;shared folder&#34;  </span>
@@ -142,19 +138,21 @@ guest <span style="color:#e6db74">ok = yes  </span>
 create <span style="color:#e6db74">mask = 0644  </span>
 directory <span style="color:#e6db74">mask = 0755  </span>
 force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div>
+
+<a href='/dlna2.jpg'><img src='/dlna2.jpg' alt='Raspberry Pi Imager' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
 <p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</p>
 <ul>
-<li>Now type <strong>sudo apt install qbittorrent-nox minidlna</strong> to install qbittorrent-nox and MiniDLNA(Now ReadyMedia) on your device.</li>
+<li>
+<p>Now type <strong>sudo apt install qbittorrent-nox minidlna</strong> to install qbittorrent-nox and MiniDLNA(Now ReadyMedia) on your device.</p>
+</li>
+<li>
+<p>Now type <strong>sudo nano /etc/minidlna.conf</strong> to configure your MiniDLNA sever and add the following line <strong>media_dir=/home/&lt;user&gt;/share</strong> then save the file and restart your device. Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</p>
+</li>
 </ul>
 
 <a href='/dlna3.jpg'><img src='/dlna3.jpg' alt='MiniDLNA configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
-
-
-<ul>
-<li>Now type <strong>sudo nano /etc/minidlna.conf</strong> to configure your MiniDLNA sever and add the following line <strong>media_dir=/home/&lt;user&gt;/share</strong> then save the file and restart your device. Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</li>
-</ul>
-
-<a href='/dlna4.jpg'><img src='/dlna4.jpg' alt='qBittorrent Client Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
 
 
 <ul>
@@ -172,31 +170,37 @@ force <span style="color:#e6db74">user = &lt;user&gt;  </span></code></pre></div
 
 <span style="color:#960050;background-color:#1e0010">[Install]</span>  
 <span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target  </span></code></pre></div>
+
+<a href='/dlna4.jpg'><img src='/dlna4.jpg' alt='qBittorrent Client Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
 <p>Where the <strong>&lt;user&gt;</strong> is your userid. Usually its <strong>pi</strong> by default on Raspberry Pi OS.</p>
 <ul>
-<li>Now type <strong>sudo systemctl daemon-reload</strong> and then <strong>sudo systemctl enable qbittorrent.service</strong> and then restart your device.</li>
+<li>
+<p>Now type <strong>sudo systemctl daemon-reload</strong> and then <strong>sudo systemctl enable qbittorrent.service</strong> and then restart your device.</p>
+</li>
+<li>
+<p>Now open your browser and type <strong>http://&lt;IP Address of your Raspberry Pi&gt;:8080</strong>. If the qBittorrent clien WebUI appears it means that your qBittorrent client is working.</p>
+</li>
 </ul>
 
 <a href='/dlna5.jpg'><img src='/dlna5.jpg' alt='qBittorrent WebUI' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
 
 
 <ul>
-<li>Now open your browser and type <strong>http://&lt;IP Address of your Raspberry Pi&gt;:8080</strong>. If the qBittorrent clien WebUI appears it means that your qBittorrent client is working.</li>
+<li>Now go to <strong>Tools &gt; Options &gt; Web UI</strong> in your qBittorrent WebUI and set up whatever <strong>username</strong> and <strong>password</strong> you like for your qBittorrent WebUI.</li>
 </ul>
 
 <a href='/dlna6.jpg'><img src='/dlna6.jpg' alt='qBittorrent WebUI Authentication Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
 
 
 <ul>
-<li>Now go to <strong>Tools &gt; Options &gt; Web UI</strong> in your qBittorrent WebUI and set up whatever <strong>username</strong> and <strong>password</strong> you like for your qBittorrent WebUI.</li>
-</ul>
-
-<a href='/dlna7.jpg'><img src='/dlna7.jpg' alt='qBittorrent WebUI Save Folder Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
-
-
-<ul>
 <li>Now go to <strong>Tools &gt; Options &gt; Downloads</strong> in your qBittorrent WebUI and set up the <strong>Default Save Path:</strong> to <strong>/home/&lt;userid&gt;/share/</strong> to point to our <strong>share</strong> folder. where <strong>&lt;userid&gt;</strong> is whatever your <strong>user</strong> is and usually by default its <strong>pi</strong> on Raspberry Pi OS.</li>
 </ul>
+
+<a href='/dlna6.jpg'><img src='/dlna6.jpg' alt='qBittorrent WebUI Authentication Configuration' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
 <p>That is all you need to do and you are done.</p>
 <h2 id="how-to-play-the-media-files-downloaded-by-the-qbittorrent-webui">How to play the media files downloaded by the qBittorrent WebUI?</h2>
 
