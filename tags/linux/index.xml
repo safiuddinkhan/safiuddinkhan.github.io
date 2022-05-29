@@ -6,7 +6,16 @@
     <description>Recent content in Linux on Technology with Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 May 2022 20:16:12 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 May 2022 16:52:13 +0500</lastBuildDate><atom:link href="https://techwithsafi.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Brief History of Unix</title>
+      <link>https://techwithsafi.com/posts/a_brief_history_of_unix/</link>
+      <pubDate>Sun, 29 May 2022 16:52:13 +0500</pubDate>
+      
+      <guid>https://techwithsafi.com/posts/a_brief_history_of_unix/</guid>
+      <description>Today Unix-like operating systems chiefly Linux dominates both the server market and the mobile market. The history of Unix is old and is full of twists.</description>
+    </item>
+    
     <item>
       <title>My top 5 favorite Free and Open Source Video Games</title>
       <link>https://techwithsafi.com/posts/my_top_5_favorite_foss_fames/</link>
