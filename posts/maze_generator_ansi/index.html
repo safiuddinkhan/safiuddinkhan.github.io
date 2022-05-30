@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>So I made a maze generation program in the terminal using ANSI and here is how I did it</title>
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+ <meta name="description" content="Here is a brief introduction to ANSI codes and how they are used to colour, position and format text in the terminal and how my code uses them.">
+ 
+ <meta name="og:site_name" content="Technology with Safi">
+ <meta name="og:title" content="So I made a maze generation program in the terminal using ANSI and here is how I did it">
+ <meta property="og:description" content="Here is a brief introduction to ANSI codes and how they are used to colour, position and format text in the terminal and how my code uses them." />
+ <meta property="og:image" content="/maze1.jpg" />
+ <meta property="og:type" content="article" />
+ 
+ 
+ <meta name="twitter:title" content="So I made a maze generation program in the terminal using ANSI and here is how I did it">
+ <meta name="twitter:description" content="Here is a brief introduction to ANSI codes and how they are used to colour, position and format text in the terminal and how my code uses them.">
+ <meta name="twitter:image" content="/maze1.jpg">
+ <meta name="twitter:card" content="summary_large_image">
+ 
+
+ 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEFTZK4PP8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JEFTZK4PP8');
+</script>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7136559760576112"
+     crossorigin="anonymous"></script>
+
+
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-dark text-light" style="$body-bg: #000;">
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+<div class="container-fluid">
+<a class="navbar-brand" href="https://techwithsafi.com/">
+<img src="/logo.png" height="32px" width="32px" class="d-inline-block align-text-top" alt="Tech with Safi"></a>
+
+
+
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+	<span class="navbar-toggler-icon"></span>
+</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav">
+
+<li class="nav-item">
+	<a class="nav-link" href="/posts/">All Posts</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="/about/">About</a>
+</li>
+
+</ul>
+</div>
+
+</div>  
+</nav>
+
+
+
+
+<div class="container pt-5">
+<br>
+<h1>So I made a maze generation program in the terminal using ANSI and here is how I did it</h1>
+<span class="badge bg-info">2022-05-30 20:28:09 &#43;0500 PKT</span>
+
+	<a href="https://techwithsafi.com/tags/technology/"><span class="badge bg-secondary">Technology</span></a>
+
+	<a href="https://techwithsafi.com/tags/linux/"><span class="badge bg-secondary">Linux</span></a>
+
+	<a href="https://techwithsafi.com/tags/programming/"><span class="badge bg-secondary">Programming</span></a>
+
+<br><br>
+
+<a href='/maze1.jpg'><img src='/maze1.jpg' alt='My maze generation program running in Xterm' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>Back in the old days of DOS, we used to write text-based applications by directly manipulating the video ram at 0xB8000. Though DOS also supported ANSI codes via ANSI.SYS, but no one used it.</p>
+
+<a href='/maze2.jpg'><img src='/maze2.jpg' alt='Memory map of DOS' width='320px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>The console in the Unix world works in an entirely different way. There is no low-level access to video memory. Instead, we send the text to the dumb terminal or a terminal emulator and control the colour, font style and positioning of the text via the ANSI escape sequences as commands to a dumb terminal or a terminal emulator.</p>
+
+<a href='/maze3.jpg'><img src='/maze3.jpg' alt='DEC VT100 Dumb Terminal' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>Dumb terminals don’t exist in the 21st century being long superseded by thin clients though we still use terminal emulators widely.</p>
+
+<a href='/maze4.jpg'><img src='/maze4.jpg' alt='Xterm the default terminal emulator of X11' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<p>ANSI escape sequences are best from BBSes where they were used to generate the ANSI art and BBS video games.</p>
+
+<a href='/maze5.jpg'><img src='/maze5.jpg' alt='An example of ANSI art' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<h2 id="some-basic-ansi-escape-sequences">Some Basic ANSI escape sequences</h2>
+<p>OK, So here are some basic ANSI escape codes. An ANSI escape sequences starts up with the escape character <strong>\033</strong> or <strong>\x1b</strong> followed by <strong>[</strong> and then the code. You can use them very simply in C/C++ language with printf statement or even in python with the print statement.</p>
+<p>The following ANSI escape sequence will clear the screen on the terminal.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">printf(<span style="color:#960050;background-color:#1e0010">“\</span><span style="color:#ae81ff">033</span>[<span style="color:#ae81ff">2</span>J<span style="color:#960050;background-color:#1e0010">”</span>);</code></pre></div>
+<p>or in python3 as</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">“</span>\<span style="color:#ae81ff">033</span>[<span style="color:#ae81ff">2</span>J<span style="color:#960050;background-color:#1e0010">”</span>)</code></pre></div>
+<p>or in BASH as</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">echo -e “<span style="color:#ae81ff">\0</span>33<span style="color:#f92672">[</span>2J”</code></pre></div>
+<p>where the flag -e tells echo to interpret the escape sequences.</p>
+<p>Some of the common ANSI escape sequences are as follow:</p>
+<ul>
+<li><strong>\033[&lt;FG&gt;;&lt;BG&gt;m</strong> where <strong>FG</strong> is the value for foreground colour and <strong>BG</strong> is the value for background colour like</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">echo -e “<span style="color:#ae81ff">\0</span>33<span style="color:#f92672">[</span>37;41mHello this is a test”</code></pre></div>
+<p>will produce the text with white foreground and red background.</p>
+<p>You can get the further details on its values from this Wikipedia table.</p>
+
+<a href='/maze6.jpg'><img src='/maze6.jpg' alt='ANSI Color Chart' width='640px' height='' class="img-fluid pt-2 pb-2"></a>
+
+
+<ul>
+<li><strong>\033[&lt;N&gt;A</strong> will move the cursor up by <strong>&lt;N&gt;</strong> lines.</li>
+<li><strong>\033[&lt;N&gt;B</strong> will move the cursor down by <strong>&lt;N&gt;</strong> lines.</li>
+<li><strong>\033[&lt;N&gt;C</strong> will move the cursor forward by <strong>&lt;N&gt;</strong> characters.</li>
+<li><strong>\033[&lt;N&gt;D</strong> will move the cursor backwards by <strong>&lt;N&gt;</strong> characters.</li>
+<li><strong>\033[&lt;ROW&gt;;&lt;COL&gt;H</strong> will put the cursor at <strong>&lt;ROW&gt;</strong> and <strong>&lt;COL&gt;</strong>.</li>
+<li><strong>\033[2J</strong> will clear the terminal screen.</li>
+<li><strong>\033[K</strong> will erase to the end of line.</li>
+</ul>
+<p>You can find the further details on ANSI escape sequences from this Wikipedia page.</p>
+<p><a href="https://en.wikipedia.org/wiki/ANSI_escape_code">https://en.wikipedia.org/wiki/ANSI_escape_code</a></p>
+<h2 id="my-procedural-maze-generation-program">My Procedural Maze Generation Program</h2>
+<p>I will not explain much about it here, but it uses the depth-first search algorithm to generate a procedural maze. you can check out the code on my Github repo for further details.</p>
+<p><a href="https://github.com/safiuddinkhan/maze_generator">https://github.com/safiuddinkhan/maze_generator</a></p>
+
+<br>
+<b>If you like my content please consider subscribing me on my Patreon by clicking <a href="https://www.patreon.com/safiuddinkhan">here</a>.</b>
+<br>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7136559760576112"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7136559760576112"
+     data-ad-slot="6393512176"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<footer class="mt-auto pt-5" id="footer1">
+<nav class="navbar navbar-expand-sm bg-secondary">
+<div class="container-fluid">
+<p class="text-white w-100 text-center">Copyright© Safi ud Din Khan 2022</p>
+</div>  
+</nav>
+</footer>
+
+</body>
+</html>
